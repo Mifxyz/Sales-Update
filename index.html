@@ -1,305 +1,564 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-  <title>YANZZ HOSTING</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      color: #fff;
-    }
-    header {
-      background: #000000cc;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    <header>
-  <img src="https://files.catbox.moe/7h79jd.jpg" alt="YANZZ Logo">
-  <h1>YANZZ HOSTING</h1>
-  <nav>
-    <a href="#produk">Produk</a>
-    <a href="#konfirmasi">Konfirmasi</a>
-  </nav>
-</header>
-    }
-    header h1 {
-      margin: 0;
-      color: #ffcc00;
-      font-size: 24px;
-    }
-    nav a {
-      color: #fff;
-      margin-left: 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      color: #ffcc00;
-    }
-    .container {
-      padding: 2rem;
-    }
-    .product {
-      background: #ffffff15;
-      margin-bottom: 1.5rem;
-      padding: 1rem;
-      border-radius: 10px;
-      transition: 0.3s;
-    }
-    .product:hover {
-      background: #ffffff30;
-    }
-    .product img {
-      width: 100%;
-      max-width: 300px;
-      border-radius: 10px;
-      margin-bottom: 10px;
-    }
-    .product h2 {
-      margin-top: 0;
-      color: #ffcc00;
-    }
-    footer {
-      background: #000;
-      padding: 1rem;
-      text-align: center;
-      color: #aaa;
-      margin-top: 40px;
-    }
-    form input, form textarea, form button {
-      display: block;
-      width: 100%;
-      margin: 10px 0;
-      padding: 10px;
-      border-radius: 6px;
-      border: none;
-    }
-    form button {
-      background: #ff9800;
-      color: #fff;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    .highlight {
-      color: #00ffcc;
-      font-weight: bold;
-    }
-    .wa-float {
-      position: fixed;
-      width: 60px;
-      height: 60px;
-      bottom: 40px;
-      right: 40px;
-      background-color: #25D366;
-      color: #fff;
-      border-radius: 50px;
-      text-align: center;
-      font-size: 30px;
-      box-shadow: 2px 2px 3px #999;
-      z-index: 100;
-    }
-    .wa-float i {
-      margin-top: 16px;
-    }
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        text-align: center;
-      }
-      header img {
-        margin-bottom: 10px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erafone Cisoka Sales Update - Auto Save</title>
+    <style>
+        :root {
+            --primary-color: #00ffff;
+            --background-color: #0d0d0d;
+            --surface-color: #1a1a1a;
+            --text-color: #ffffff;
+            --border-color: #333;
+            --label-color: #aaa;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 10px;
+        }
+        
+        #app-container {
+            display: none;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: var(--surface-color);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+        }
+
+        .neon-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2em;
+            color: #fff;
+            text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px var(--primary-color), 0 0 82px var(--primary-color), 0 0 92px var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .section {
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+        }
+
+        .section h2 {
+            font-size: 1.5em;
+            margin-top: 0;
+            color: var(--primary-color);
+            text-shadow: 0 0 5px var(--primary-color);
+        }
+
+        .item {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px dashed #444;
+            gap: 10px;
+        }
+
+        .item:last-child {
+            border-bottom: none;
+        }
+
+        .label-group {
+            flex: 1 1 150px;
+            text-align: left;
+            font-size: 1.1em;
+            color: var(--label-color);
+            font-weight: bold;
+        }
+
+        .inputs-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            flex: 2 1 300px;
+            justify-content: flex-end;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .input-group label {
+            color: var(--label-color);
+            font-size: 0.9em;
+        }
+
+        .input-group input {
+            background-color: #333;
+            border: 1px solid var(--primary-color);
+            color: var(--text-color);
+            padding: 8px;
+            text-align: right;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        input.qty-input { width: 60px; }
+        input.value-input { width: 130px; }
+
+        .total {
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            font-size: 1.2em;
+            font-weight: bold;
+            text-shadow: 0 0 5px var(--primary-color);
+        }
+        
+        .total-all {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: var(--primary-color);
+            color: var(--background-color);
+            border-radius: 10px;
+            font-size: 1.5em;
+            font-weight: bold;
+            box-shadow: 0 0 15px var(--primary-color);
+        }
+        
+        .button-container {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .neon-button {
+            padding: 10px 15px;
+            font-size: 1.0em;
+            font-weight: bold;
+            color: var(--primary-color);
+            background-color: var(--surface-color);
+            border: 2px solid var(--primary-color);
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 0 5px var(--primary-color), 0 0 10px var(--primary-color), 0 0 15px var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .neon-button:hover {
+            color: var(--background-color);
+            background-color: var(--primary-color);
+            box-shadow: 0 0 15px var(--primary-color), 0 0 25px var(--primary-color), 0 0 40px var(--primary-color);
+        }
+        
+        #save-button { color: #00ff00; border-color: #00ff00; box-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00; }
+        #save-button:hover { background-color: #00ff00; color: var(--background-color); box-shadow: 0 0 15px #00ff00, 0 0 25px #00ff00; }
+        #reset-button { color: #ff0000; border-color: #ff0000; box-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000; }
+        #reset-button:hover { background-color: #ff0000; color: var(--background-color); box-shadow: 0 0 15px #ff0000, 0 0 25px #ff0000; }
+
+        .output-container { margin-top: 30px; text-align: left; }
+        #output {
+            width: 100%;
+            height: 300px;
+            background-color: var(--surface-color);
+            color: var(--text-color);
+            border: 2px solid var(--primary-color);
+            border-radius: 10px;
+            padding: 15px;
+            font-family: 'Courier New', Courier, monospace;
+            resize: vertical;
+            box-sizing: border-box;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+            display: none;
+        }
+
+        .footer { margin-top: 30px; font-size: 0.9em; color: #555; }
+
+        @media (max-width: 600px) {
+            body { padding: 5px; }
+            .container { padding: 15px; }
+            .neon-title { font-size: 1.8em; }
+            .item { flex-direction: column; align-items: stretch; gap: 12px; }
+            .inputs-container { justify-content: space-between; gap: 10px; }
+            .input-group { justify-content: space-between; }
+            input.value-input { width: 120px; }
+        }
+    </style>
 </head>
 <body>
 
-<header>
-  <img src="https://i.ibb.co/3sQLVcG/bug.jpg" alt="YANZZ Logo">
-  <h1>YANZZ HOSTING</h1>
-  <nav>
-    <a href="#produk">Produk</a>
-    <a href="#konfirmasi">Konfirmasi</a>
-  </nav>
-</header>
+    <div id="app-container">
+        <div class="container">
+            <h1 class="neon-title">UPDATE SALES ALL TEAM ERAFONE CISOKA</h1>
+            <h3 id="current-date"></h3>
 
-<div class="container" id="produk">
-  <h2>Produk Tersedia</h2>
+            <div class="section">
+                <h2>QTY / VALUE</h2>
+                <div id="device-list"></div>
+                <div class="total">TOTAL DEVICE: <span id="total-device-qty">0</span> / <span id="total-device-value">0</span></div>
+            </div>
 
-  <div class="product">
-    <img src="https://files.catbox.moe/eygtxe.jpg" alt="PT PRIB PANEL">
-    <h2>PT PRIB PANEL – 20K</h2>
-    <ul>
-      <li>BISA OPEN PT PANEL</li>
-      <li>BISA OPEN OWN PANEL</li>
-      <li>BISA OPEN ADP</li>
-      <li>BISA OPEN RESELER</li>
-      <li>BISA JUAL PANEL</li>
-    </ul>
-  </div>
+            <div class="section">
+                <div id="vas-list"></div>
+                <div class="total">TOTAL VAS: <span id="total-vas-qty">0</span> / <span id="total-vas-value">0</span></div>
+            </div>
 
-  <div class="product">
-    <img src="https://files.catbox.moe/eygtxe.jpg" alt="PT BIASA PANEL">
-    <h2>PT BIASA PANEL – 15K</h2>
-    <ul>
-      <li>BISA OPEN OWN PANEL</li>
-      <li>BISA OPEN ADP</li>
-      <li>BISA OPEN RESELER</li>
-      <li>BISA JUAL PANEL</li>
-    </ul>
-  </div>
+            <div class="section total-all">
+                TOTAL ALL CATEGORY: <span id="total-all-category">0</span>
+            </div>
+            
+            <div class="section">
+                <h2>LOST STORE</h2>
+                <h3 id="lost-date"></h3>
+                <div id="lost-store-list"></div>
+            </div>
 
-  <div class="product">
-    <img src="https://files.catbox.moe/eygtxe.jpg" alt="OWN PANEL">
-    <h2>OWN PANEL – 13K</h2>
-    <ul>
-      <li>BISA OPEN ADP</li>
-      <li>BISA OPEN RESELER</li>
-      <li>BISA JUAL PANEL</li>
-    </ul>
-  </div>
+            <div class="section">
+                <h2>UPDATE SALES LEASING</h2>
+                <div id="leasing-list"></div>
+            </div>
 
-  <div class="product">
-    <img src="https://files.catbox.moe/eygtxe.jpg" alt="ADP">
-    <h2>ADP – 8K</h2>
-    <ul>
-      <li>BISA OPEN RESELER</li>
-      <li>BISA JUAL PANEL</li>
-    </ul>
-  </div>
+            <div class="button-container">
+                <button class="neon-button" id="save-button">Simpan Data</button>
+                <button class="neon-button" id="load-button">Muat Data</button>
+                <button class="neon-button" id="reset-button">Reset Data</button>
+                <button class="neon-button" id="generate-button">Generate Output</button>
+                <button class="neon-button" id="copy-button">Copy Text</button>
+            </div>
 
-  <div class="product">
-    <img src="https://files.catbox.moe/eygtxe.jpg" alt="Reseller">
-    <h2>RESELLER – 4K</h2>
-    <ul>
-      <li>BISA JUAL PANEL</li>
-      <li>BISA OPEN MURBUG</li>
-      <li>BISA OPEN JASA PUSHKONTAK</li>
-    </ul>
-  </div>
+            <div class="output-container">
+                <textarea id="output" readonly></textarea>
+            </div>
+        </div>
+        
+        <div class="footer">
+            Made by Mifxyz✨
+        </div>
+    </div>
 
-  <div class="product">
-    <img src="https://files.catbox.moe/eygtxe.jpg" alt="List Panel">
-    <h2>LIST PANEL</h2>
-    <ul>
-    <li>1GB: 1.000</li>
-    <li>2GB: 2.000</li>
-    <li>3GB: 3.000</li>
-    <li>4GB: 4.000</li>
-    <li>5GB: 4.500</li>
-    <li>6GB: 5.000</li>
-    <li>7GB: 5.500</li>
-    <li>8GB: 6.000</li>
-    <li>9GB: 6.500</li>
-    <li>10GB: 7.000</li>
-    <li>UNLI: 8.000</li>
-    </ul>
-  </div>
-  
-    <div class="product">
-    <img src="https://files.catbox.moe/eygtxe.jpg" alt="List apk kebutuhan jb">
-    <h2>1 APK 1K</h2>
-    <ul>
-      <li>PIXELAB MOD1L</li>
-      <li>PIXELAB MOD2</li>
-      <li>FAYU PEDIA</li>
-      <li>SV ITOMATIS WHATSAPP</li>
-      <li>HYRIZ</li>
-    </ul>
-  </div>
-  
-    <div class="product">
-    <img src="https://files.catbox.moe/ooq0kt.jpg" alt="LOGO">
-    <h2>LOGO TESTIMONI 2K</h2>
-    <ul>
-      <li>LOGO DI ATAS</li>
-    </ul>
-  </div>
-  
-      <div class="product">
-    <img src="https://files.catbox.moe/8hgcdm.jpeg" alt="LOGO">
-    <h2>LOGO1 2K</h2>
-    <ul>
-      <li>LOGO DI ATAS</li>
-    </ul>
-  </div>
-  
-      <div class="product">
-    <img src="https://files.catbox.moe/7h79jd.jpg" alt="LOGO">
-    <h2>LOGO2 2K</h2>
-    <ul>
-      <li>LOGO DI ATAS</li>
-    </ul>
-  </div>
-  
-  <div class="product">
-    <img src="https://files.catbox.moe/eygtxe.jpg" alt="LOGO">
-    <h2>LOGO3 2K</h2>
-    <ul>
-      <li>LOGO DI ATAS</li>
-    </ul>
-  </div>
-  
-     <div class="product">
-    <img src="https://files.catbox.moe/eygtxe.jpg" alt="BUG TOLS">
-    <h2>OWNER BUG 8K</h2>
-    <ul>
-      <li>BISA OPEN MURBUG</li>
-      <li>BISA OPEN JASBUG</li>
-      <li>BISA BUG SEPUASNYA</li>
-    </ul>
-  </div>
-  
-       <div class="product">
-    <img src="https://files.catbox.moe/eygtxe.jpg" alt="BUG TOLS">
-    <h2>MURBUG 5K</h2>
-    <ul>
-      <li>BISA OPEN JASBUG</li>
-      <li>BISA BUG SEPUASNYA</li>
-    </ul>
-  </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // Kode untuk menampilkan aplikasi secara langsung tanpa prompt
+            const appContainer = document.getElementById('app-container');
+            appContainer.style.display = 'block';
 
-  <div class="product">
-    <img src="https://files.catbox.moe/eygtxe.jpg" alt="Bug Tools">
-    <h2>JASBUG 1K</h2>
-    <p>MENGHITAMKAN ATAU DELAY ATAU FC</p>
-  </div>
-</div>
+            const initialDeviceData = [
+                { name: "OPPO", qty: "", value1: ""}, { name: "VIVO", qty: "2", value1: "6098000"},
+                { name: "IQOO", qty: "", value1: ""}, { name: "SAMSUNG", qty: "3", value1: "13697000"},
+                { name: "XIAOMI", qty: "", value1: ""}, { name: "APPLE", qty: "", value1: ""},
+                { name: "INFINIX", qty: "", value1: ""}, { name: "TECNO", qty: "", value1: ""},
+                { name: "REALME", qty: "", value1: ""}, { name: "ASUS", qty: "", value1: ""},
+                { name: "NOKIA", qty: "", value1: ""}, { name: "HONOR", qty: "", value1: ""},
+                { name: "HUAWEI", qty: "", value1: ""},
+            ];
+            
+            const initialVasData = [
+                { name: "TV", qty: "", value1: ""}, { name: "LAPTOP", qty: "", value1: "" },
+                { name: "TECPROTEC", qty: "", value1: "" }, { name: "UT", qty: "", value1: "" },
+                { name: "INDOSAT", qty: "1", value1: "600000" }, { name: "PRIO", qty: "", value1: "" },
+                { name: "XMART", qty: "", value1: "" }, { name: "TSEL", qty: "", value1: "" },
+                { name: "SMARTFREN", qty: "", value1: "" }, { name: "ACC", qty: "6", value1: "1125000" },
+                { name: "MEDPOIN", qty: "1", value1: "150000" }, { name: "TOKEN", qty: "", value1: "" },
+            ];
 
-<div class="container" id="konfirmasi">
-  <h2>Konfirmasi Pembayaran</h2>
-  <p>Transfer ke rekening <span class="highlight">DANA: 085712594787</span></p>
-  <p>Setelah transfer, isi form ini. Admin akan mengirim akses ke email kamu dan jangan sampe email atau nonor WhatsApp anda salah karena bisa terjadi kesalahan salah kirim jadi telitilah saat mengisi.</p>
+            const initialLeasingData = [
+                { name: "AKULAKU", value1: ""}, { name: "KREDIVO", value1: ""},
+                { name: "SHOPEEPAY", value1: ""}, { name: "INDODANA", value1: ""},
+                { name: "HCI", value1: ""}, { name: "LAINNYA", value1: ""},
+            ];
+            
+            const initialLostStoreData = [
+                { name: "REJECT", id: "reject" },
+                { name: "STOCK KOSONG", id: "stock-kosong" },
+                { name: "LIHAT LIHAT/LOSE", id: "lihat" }
+            ];
 
-  <form action="https://formsubmit.co/yanzzgg749@gmail.com" method="POST">
-  <input type="hidden" name="_cc" value="yanzzbuyer@gmail.com">
-    <input type="hidden" name="_subject" value="Konfirmasi Transfer YANZZ HOSTING">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="text" name="Nama" placeholder="Nama Kamu" required>
-    <input type="text" name="Nomor_WA" placeholder="Nomor WhatsApp Kamu" required>
-    <input type="email" name="Email" placeholder="Email Kamu" required>
-    <textarea name="Pesanan" placeholder="Contoh: Saya pesan PT PRIB PANEL" required></textarea>
-    <textarea name="Catatan" placeholder="Contoh: Sudah transfer jam 13.45 dan berikan pesan" required></textarea>
-    <button type="submit">Saya Sudah Transfer</button>
-  </form>
+            const formatCurrency = (value) => {
+                const number = Number(String(value).replace(/[^0-9]/g, ''));
+                return number ? new Intl.NumberFormat('id-ID').format(number) : '';
+            };
+            const getNumericValue = (element) => Number(element.dataset.value || 0);
 
-  <p><strong>WAJIB!</strong> KALO ADA MASALAH BISA HUBUNGI NOMOR WHATSAPP YANZZ HOSTING <span class="highlight">: </span></p>
-</div>
+            const updateDate = () => {
+                const today = new Date();
+                const day = today.getDate();
+                const month = today.getMonth();
+                const year = today.getFullYear();
+                const monthNames = ["JANUARI", "FEBRUARI", "MARET", "APRIL", "MEI", "JUNI", "JULI", "AGUSTUS", "SEPTEMBER", "OKTOBER", "NOVEMBER", "DESEMBER"];
+                
+                document.getElementById('current-date').textContent = `${day} ${monthNames[month]} ${year}`;
+                document.getElementById('lost-date').textContent = `LOSE TGL ${day}/${String(month + 1).padStart(2, '0')}/${year}`;
+            };
 
-<a href="https://wa.me/6283824724985" class="wa-float" target="_blank" title="Chat Admin">
-  <i class="fab fa-whatsapp"></i>
-</a>
+            const createField = (item, type) => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'item';
+                itemDiv.dataset.name = item.name;
 
-<footer>
-  &copy; 2025 YANZZ HOSTING | All rights reserved.
-</footer>
+                let content = `<div class="label-group">${item.name}:</div><div class="inputs-container">`;
+                
+                if (type === 'qty-value' || type === 'lost-store') {
+                    content += `<div class="input-group">
+                                    <label>QTY:</label>
+                                    <input type="number" class="qty-input" data-field="qty">
+                                </div>`;
+                }
+                
+                content += `<div class="input-group">
+                                <label>Value 1:</label>
+                                <input type="text" class="value-input" data-field="value1">
+                            </div>`;
+                
+                if (type === 'qty-value' || type === 'leasing' || type === 'lost-store') {
+                    content += `<div class="input-group">
+                                    <label>Value 2:</label>
+                                    <input type="text" class="value-input" data-field="value2">
+                                </div>`;
+                }
+                
+                content += `</div>`;
+                itemDiv.innerHTML = content;
+                return itemDiv;
+            };
 
+            const populateContainer = (containerId, data, type) => {
+                const container = document.getElementById(containerId);
+                container.innerHTML = '';
+                data.forEach(item => container.appendChild(createField(item, type)));
+            };
+
+            const calculateTotals = () => {
+                const calculateSection = (listSelector) => {
+                    let totalQty = 0, totalValue = 0;
+                    document.querySelectorAll(`${listSelector} .item`).forEach(item => {
+                        totalQty += Number(item.querySelector('.qty-input')?.value || 0);
+                        item.querySelectorAll('.value-input').forEach(input => totalValue += getNumericValue(input));
+                    });
+                    return { totalQty, totalValue };
+                };
+                
+                const device = calculateSection('#device-list');
+                const vas = calculateSection('#vas-list');
+                
+                document.getElementById('total-device-qty').textContent = device.totalQty;
+                document.getElementById('total-device-value').textContent = formatCurrency(device.totalValue);
+                document.getElementById('total-vas-qty').textContent = vas.totalQty;
+                document.getElementById('total-vas-value').textContent = formatCurrency(vas.totalValue);
+                
+                const totalAllCategory = device.totalValue + vas.totalValue;
+                document.getElementById('total-all-category').textContent = formatCurrency(totalAllCategory);
+            };
+
+            const saveData = () => {
+                const consolidateValues = (containerSelector) => {
+                    document.querySelectorAll(`${containerSelector} .item`).forEach(item => {
+                        const valueInputs = item.querySelectorAll('.value-input[data-field^="value"]');
+                        if (valueInputs.length > 1) {
+                            const value1Input = valueInputs[0];
+                            const value2Input = valueInputs[1];
+                            const totalValue = getNumericValue(value1Input) + getNumericValue(value2Input);
+
+                            value1Input.dataset.value = totalValue;
+                            value1Input.value = formatCurrency(totalValue);
+                            value2Input.dataset.value = '';
+                            value2Input.value = '';
+                        }
+                    });
+                };
+                
+                consolidateValues('#device-list');
+                consolidateValues('#vas-list');
+                consolidateValues('#leasing-list');
+                consolidateValues('#lost-store-list');
+                calculateTotals();
+
+                const getDataFromSection = (containerSelector) => {
+                    return Array.from(document.querySelectorAll(`${containerSelector} .item`)).map(item => {
+                        const data = { name: item.dataset.name };
+                        item.querySelectorAll('input').forEach(input => {
+                            const field = input.dataset.field;
+                            data[field] = (field === 'qty') ? input.value : (input.dataset.value || '');
+                        });
+                        return data;
+                    });
+                };
+                
+                const dataToSave = {
+                    devices: getDataFromSection('#device-list'),
+                    vas: getDataFromSection('#vas-list'),
+                    leasing: getDataFromSection('#leasing-list'),
+                    lostStore: getDataFromSection('#lost-store-list')
+                };
+
+                localStorage.setItem('salesData', JSON.stringify(dataToSave));
+                alert('Data berhasil dikonsolidasi dan disimpan!');
+            };
+
+            // --- PERUBAHAN DI SINI ---
+            const loadData = (isManual = false) => {
+                const savedData = localStorage.getItem('salesData');
+                if (!savedData) {
+                    if (isManual) {
+                        alert('Tidak ada data tersimpan!');
+                    }
+                    return;
+                }
+                const data = JSON.parse(savedData);
+
+                const loadSectionData = (containerSelector, sectionData) => {
+                    if (!sectionData) return;
+                    sectionData.forEach(itemData => {
+                        const itemElement = document.querySelector(`${containerSelector} .item[data-name="${itemData.name}"]`);
+                        if (itemElement) {
+                            itemElement.querySelectorAll('input').forEach(input => {
+                                const field = input.dataset.field;
+                                const value = itemData[field] || '';
+                                if (field.startsWith('value')) {
+                                    input.dataset.value = value;
+                                    input.value = formatCurrency(value);
+                                } else {
+                                    input.value = value;
+                                }
+                            });
+                        }
+                    });
+                };
+
+                loadSectionData('#device-list', data.devices);
+                loadSectionData('#vas-list', data.vas);
+                loadSectionData('#leasing-list', data.leasing);
+                loadSectionData('#lost-store-list', data.lostStore);
+                
+                calculateTotals();
+                if (isManual) {
+                    alert('Data berhasil dimuat!');
+                }
+            };
+
+            const resetData = () => {
+                if (confirm('Anda yakin ingin menghapus semua data? Tindakan ini tidak dapat dibatalkan.')) {
+                    localStorage.removeItem('salesData');
+                    populateContainer('device-list', initialDeviceData, 'qty-value');
+                    populateContainer('vas-list', initialVasData, 'qty-value');
+                    populateContainer('leasing-list', initialLeasingData, 'leasing');
+                    populateContainer('lost-store-list', initialLostStoreData, 'lost-store');
+                    calculateTotals();
+                    alert('Semua data berhasil direset!');
+                }
+            };
+            
+            const generateOutputText = () => {
+                let output = `*GASSSPOL UPDATE SALES ALL TEAM ERAFONE CISOKA*\n\n*${document.getElementById('current-date').textContent}*\n\nQTY / VALUE\n\n`;
+
+                const generateSectionText = (selector) => {
+                    let text = '';
+                    document.querySelectorAll(`${selector} .item`).forEach(item => {
+                        const name = item.dataset.name;
+                        const qtyInput = item.querySelector('.qty-input');
+                        const qty = qtyInput ? qtyInput.value.trim() : '';
+                        
+                        let totalValue = 0;
+                        item.querySelectorAll('.value-input').forEach(input => totalValue += getNumericValue(input));
+                        
+                        const displayValue = formatCurrency(totalValue);
+
+                        let line = `${name} :`;
+                        if (qty && displayValue) {
+                            line += ` ${qty} / ${displayValue}`;
+                        } else if (qty) {
+                            line += ` ${qty}`;
+                        } else if (displayValue) {
+                            line += ` ${displayValue}`;
+                        }
+                        text += line + '\n';
+                    });
+                    return text;
+                };
+
+                output += generateSectionText('#device-list');
+                output += `TOTAL DEVICE : ${document.getElementById('total-device-qty').textContent} / ${document.getElementById('total-device-value').textContent}\n\n`;
+                output += generateSectionText('#vas-list');
+                output += `TOTAL VAS : ${document.getElementById('total-vas-qty').textContent} / ${document.getElementById('total-vas-value').textContent}\n\n`;
+                output += `TOTAL ALL CATEGORY : ${document.getElementById('total-all-category').textContent}\n\n\n`;
+                
+                output += `*LOST STORE*\n\n${document.getElementById('lost-date').textContent}\n`;
+                document.querySelectorAll('#lost-store-list .item').forEach(item => {
+                    const name = item.dataset.name;
+                    const qty = item.querySelector('.qty-input').value.trim();
+                    
+                    let totalValue = 0;
+                    item.querySelectorAll('.value-input').forEach(input => totalValue += getNumericValue(input));
+                    const displayValue = formatCurrency(totalValue);
+                    
+                    output += `${name}\nQTY : ${qty}\nVALUE : ${displayValue}\n\n`;
+                });
+                
+                output += `*UPDATE SALES LEASING*\n\n`;
+                output += generateSectionText('#leasing-list');
+                
+                return output;
+            };
+
+            const handleGenerate = () => {
+                calculateTotals();
+                const outputElement = document.getElementById('output');
+                outputElement.value = generateOutputText();
+                outputElement.style.display = 'block';
+            };
+
+            const handleCopy = async () => {
+                const outputElement = document.getElementById('output');
+                if (outputElement.style.display !== 'block' || !outputElement.value) {
+                    alert('Mohon generate output terlebih dahulu!');
+                    return;
+                }
+                try {
+                    await navigator.clipboard.writeText(outputElement.value);
+                    alert('Teks berhasil disalin!');
+                } catch (err) {
+                    alert('Gagal menyalin teks.');
+                }
+            };
+
+            const handleValueInput = (e) => {
+                const input = e.target;
+                const rawValue = input.value.replace(/[^0-9]/g, '');
+                input.dataset.value = rawValue;
+                input.value = formatCurrency(rawValue);
+                calculateTotals();
+            };
+
+            document.body.addEventListener('input', (e) => {
+                if (e.target.matches('.value-input')) handleValueInput(e);
+                if (e.target.matches('.qty-input')) calculateTotals();
+            });
+
+            document.getElementById('save-button').addEventListener('click', saveData);
+            document.getElementById('load-button').addEventListener('click', () => loadData(true));
+            document.getElementById('reset-button').addEventListener('click', resetData);
+            document.getElementById('generate-button').addEventListener('click', handleGenerate);
+            document.getElementById('copy-button').addEventListener('click', handleCopy);
+
+            // --- PERUBAHAN DI SINI ---
+            updateDate();
+            populateContainer('device-list', initialDeviceData, 'qty-value');
+            populateContainer('vas-list', initialVasData, 'qty-value');
+            populateContainer('leasing-list', initialLeasingData, 'leasing');
+            populateContainer('lost-store-list', initialLostStoreData, 'lost-store');
+            
+            // Panggil loadData() secara otomatis saat halaman pertama kali dibuka
+            loadData();
+        });
+    </script>
 </body>
 </html>
